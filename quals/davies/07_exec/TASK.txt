@@ -1,0 +1,1 @@
+We got two very old programs /opt/archive/s1 and /opt/archive/s2. Run it on the same machine.

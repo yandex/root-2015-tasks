@@ -1,0 +1,50 @@
+{
+  "event": "yaroot",
+  "game": "shannon",
+  "tasks": [{
+    "id": "SSL",
+    "number": 1,
+    "checker": "01_ssl/checker.py",
+    "description": "01_ssl/TASK.txt"
+  }, {
+    "id": "MariaDB repair",
+    "number": 2,
+    "checker": "02_mariadb/checker.py",
+    "description": "02_mariadb/TASK.txt"
+  }, {
+    "id": "Binary",
+    "number": 3,
+    "checker": "03_mono/checker.py",
+    "description": "03_mono/TASK.txt"
+  }, {
+    "id": "Strange protocol",
+    "number": 4,
+    "checker": "04_rudp/checker.py",
+    "description": "04_rudp/TASK.txt"
+  }, {
+    "id": "Mongo",
+    "number": 5,
+    "checker": "05_mongo/05_mongo.py",
+    "description": "05_mongo/TASK.txt"
+  }, {
+    "id": "HG",
+    "number": 6,
+    "checker": "06_hg/05_hg.py",
+    "description": "05_hg/TASK.txt"
+  }, {
+    "id": "File",
+    "number": 7,
+    "checker": "07_lvm_btrfs/07_lvm_btrfs.py",
+    "description": "07_lvm_btrfs/TASK.txt"
+  }, {
+    "id": "MariaDB tuning",
+    "number": 8,
+    "checker": "08_tuning/checker.py",
+    "description": "08_tuning/TASK.txt"
+  }, {
+    "id": "Strange file",
+    "number": 9,
+    "checker": "09_strange_file/checker.py",
+    "description": "09_strange_file/TASK.txt"
+  }]
+}

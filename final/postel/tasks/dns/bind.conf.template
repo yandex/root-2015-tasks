@@ -1,0 +1,4 @@
+zone "ZONE" {
+    type master;
+    file "FILE";
+};

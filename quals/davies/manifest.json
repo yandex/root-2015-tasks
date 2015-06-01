@@ -1,0 +1,50 @@
+{
+  "event": "yaroot",
+  "game": "davies",
+  "tasks": [{
+    "id": "Echo",
+    "number": 1,
+    "checker": "01_sctp/01_sctp.py",
+    "description": "01_sctp/TASK.txt"
+  }, {
+    "id": "Git",
+    "number": 2,
+    "checker": "02_git/02_git.py",
+    "description": "02_git/TASK.txt"
+  }, {
+    "id": "Jabber",
+    "number": 3,
+    "checker": "03_jabber/checker.py",
+    "description": "03_jabber/description.txt"
+  }, {
+    "id": "Jabber archive",
+    "number": 4,
+    "checker": "04_jabber_archive/checker.py",
+    "description": "04_jabber_archive/description.txt"
+  }, {
+    "id": "Mail",
+    "number": 5,
+    "checker": "05_mail/05_mail.py",
+    "description": "05_mail/TASK.txt"
+  }, {
+    "id": "TwMail",
+    "number": 6,
+    "checker": "06_twmail/06_twmail.py",
+    "description": "06_twmail/TASK.txt"
+  }, {
+    "id": "Exec",
+    "number": 7,
+    "checker": "07_exec/07_exec.py",
+    "description": "07_exec/TASK.txt"
+  }, {
+    "id": "DB repl",
+    "number": 8,
+    "checker": "08_db/08_db.py",
+    "description": "08_db/TASK.txt"
+  }, {
+    "id": "Balancer",
+    "number": 10,
+    "checker": "10_balancer/10_balancer.py",
+    "description": "10_balancer/TASK.txt"
+  }]
+}

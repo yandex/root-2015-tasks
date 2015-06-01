@@ -1,0 +1,3 @@
+Set up git-server with access via http://yandex:root@your_ip/log.git.
+
+If someone create a file with .ao extention, the only opperation than allowed for such is file is append.

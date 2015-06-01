@@ -1,0 +1,2 @@
+We got a strange file in ~tester/file. Noone can change it. Fix it.
+

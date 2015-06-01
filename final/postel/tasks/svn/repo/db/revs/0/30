@@ -1,0 +1,51 @@
+PLAIN
+K 10
+1bc99e3577
+V 21
+file 0-4.0.r12/353454
+K 10
+1e7fcf5512
+V 21
+file 0-22.0.r22/13348
+K 10
+38656493d3
+V 21
+file 0-27.0.r27/10310
+K 10
+4632911829
+V 20
+file 0-10.0.r10/1859
+K 10
+a1d4cfb92b
+V 21
+file 0-29.0.r29/17924
+K 10
+a3d158beaf
+V 21
+file 3-1.0.r1/1747971
+K 10
+c8360b1dd8
+V 20
+file 0-26.0.r26/2921
+K 10
+ea9b8744a0
+V 21
+file 0-20.0.r20/19509
+K 10
+ef498aa075
+V 20
+file 0-28.0.r28/2561
+END
+ENDREP
+id: 0.0.r30/401
+type: dir
+pred: 0.0.r29/18546
+count: 30
+text: 30 0 388 0 3fa3ff431776c677240cddc3c0e31f4d
+cpath: /
+copyroot: 0 /
+
+0-7.0.r7/19388 delete-file false false /747dd46d30
+
+
+401 531

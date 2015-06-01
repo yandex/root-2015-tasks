@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <project-properties class="java.util.concurrent.ConcurrentHashMap">
+    <entry>
+      <string>hudson-plugins-ansicolor-AnsiColorBuildWrapper</string>
+      <external-property>
+        <originalValue class="hudson.plugins.ansicolor.AnsiColorBuildWrapper"/>
+        <propertyOverridden>false</propertyOverridden>
+        <modified>true</modified>
+      </external-property>
+    </entry>
+    <entry>
+      <string>builders</string>
+      <describable-list-property>
+        <originalValue class="hudson.util.DescribableList">
+          <hudson.tasks.Shell>
+            <command>SERVICEPORT=$(grep &quot;PORT = &quot; serverMVC.py | cut -d &apos; &apos; -f 3)
+cat &lt;&lt; EOF &gt; Dockerfile
+FROM elyase/staticpython
+MAINTAINER m.muzafarov@gmail.com
+
+
+VOLUME /root/${JOB_NAME}
+ADD . /root/${JOB_NAME}
+
+USER root
+WORKDIR /root/${JOB_NAME}
+
+CMD python serverMVC.py
+
+EXPOSE $SERVICEPORT
+
+EOF</command>
+          </hudson.tasks.Shell>
+          <hudson.tasks.Shell>
+            <command>ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@<$SERVER_DOCKER> rm -rf /tmp/${JOB_NAME}
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@<$SERVER_DOCKER> mkdir /tmp/${JOB_NAME}
+scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -r . root@<$SERVER_DOCKER>:/tmp/${JOB_NAME}</command>
+          </hudson.tasks.Shell>
+          <hudson.tasks.Shell>
+            <command>ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@<$SERVER_DOCKER> /bin/bash &lt;&lt; EOF
+cd /tmp/${JOB_NAME}
+docker build -t yaroot:${JOB_NAME} .
+EOF</command>
+          </hudson.tasks.Shell>
+          <hudson.tasks.Shell>
+            <command>ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@<$SERVER_DOCKER> /bin/bash &lt;&lt; EOF
+
+if [ ! -f  /var/run/${JOB_NAME}.cont_id ]; then
+ echo &quot;Service is not running&quot;
+ exit 0
+fi
+
+id=$(cat /var/run/${JOB_NAME}.cont_id)
+docker stop &quot;${id}&quot; &amp;&amp; rm /var/run/${JOB_NAME}.cont_id
+
+EOF</command>
+          </hudson.tasks.Shell>
+          <hudson.tasks.Shell>
+            <command>SERVICEPORT=$(grep &quot;PORT = &quot; serverMVC.py | cut -d &apos; &apos; -f 3)
+ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@<$SERVER_DOCKER> docker run --memory=200m --cpu-shares=2 --cidfile=/var/run/${JOB_NAME}.cont_id -d -p $SERVICEPORT:$SERVICEPORT yaroot:${JOB_NAME}</command>
+          </hudson.tasks.Shell>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </describable-list-property>
+    </entry>
+    <entry>
+      <string>scm</string>
+      <scm-property>
+        <originalValue class="hudson.plugins.git.GitSCM">
+          <configVersion>1</configVersion>
+          <remoteRepositories>
+            <RemoteConfig>
+              <name>origin</name>
+              <uris>
+                <org.eclipse.jgit.transport.URIish>
+                  <scheme>ssh</scheme>
+                  <path>/root/app.git</path>
+                  <rawPath>/root/app.git</rawPath>
+                  <user>root</user>
+                  <port>-1</port>
+                  <host><$SERVER_DOCKER></host>
+                </org.eclipse.jgit.transport.URIish>
+              </uris>
+              <pushURIs/>
+              <fetch>
+                <org.eclipse.jgit.transport.RefSpec>
+                  <force>true</force>
+                  <wildcard>true</wildcard>
+                  <srcName>refs/heads/*</srcName>
+                  <dstName>refs/remotes/origin/*</dstName>
+                </org.eclipse.jgit.transport.RefSpec>
+              </fetch>
+              <push/>
+              <uploadpack>git-upload-pack</uploadpack>
+              <receivepack>git-receive-pack</receivepack>
+              <tagopt>AUTO_FOLLOW</tagopt>
+              <mirror>false</mirror>
+              <timeout>0</timeout>
+              <relativeTargetDir></relativeTargetDir>
+            </RemoteConfig>
+          </remoteRepositories>
+          <branches>
+            <hudson.plugins.git.BranchSpec>
+              <name>master</name>
+            </hudson.plugins.git.BranchSpec>
+          </branches>
+          <mergeOptions/>
+          <recursiveSubmodules>false</recursiveSubmodules>
+          <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+          <authorOrCommitter>false</authorOrCommitter>
+          <clean>false</clean>
+          <wipeOutWorkspace>false</wipeOutWorkspace>
+          <pruneBranches>false</pruneBranches>
+          <remotePoll>false</remotePoll>
+          <ignoreNotifyCommit>false</ignoreNotifyCommit>
+          <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+          <gitTool>Default</gitTool>
+          <submoduleCfg class="list"/>
+          <includedRegions></includedRegions>
+          <excludedRegions></excludedRegions>
+          <excludedUsers></excludedUsers>
+          <excludedCommits/>
+          <gitConfigName></gitConfigName>
+          <gitConfigEmail></gitConfigEmail>
+          <skipTag>false</skipTag>
+        </originalValue>
+        <propertyOverridden>false</propertyOverridden>
+      </scm-property>
+    </entry>
+  </project-properties>
+  <keepDependencies>false</keepDependencies>
+  <creationTime>1424428669595</creationTime>
+  <properties/>
+  <cascadingChildrenNames class="java.util.concurrent.CopyOnWriteArraySet"/>
+  <cascading-job-properties class="java.util.concurrent.CopyOnWriteArraySet">
+    <string>hudson-plugins-batch_task-BatchTaskProperty</string>
+  </cascading-job-properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <cleanWorkspaceRequired>false</cleanWorkspaceRequired>
+</project>
+

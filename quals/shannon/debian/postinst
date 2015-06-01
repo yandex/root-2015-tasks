@@ -1,0 +1,10 @@
+#!/bin/sh
+
+update-ca-certificates
+
+PACKAGE_NAME=yaroot-game-shannon
+BIN_DIR=/usr/share/yaroot/$PACKAGE_NAME
+
+chmod 0600 $BIN_DIR/09_strange_file/key
+chown www-data:www-data $BIN_DIR/09_strange_file/key
+

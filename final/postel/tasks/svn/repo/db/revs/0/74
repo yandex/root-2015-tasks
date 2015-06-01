@@ -1,0 +1,75 @@
+PLAIN
+K 10
+0844545efe
+V 23
+file 0-67.0.r67/1421943
+K 10
+0cbd92d9cf
+V 23
+file 0-59.0.r59/2760257
+K 10
+150ef3fd0c
+V 21
+file 0-72.0.r72/10923
+K 10
+298a960c14
+V 20
+file 0-68.0.r68/8750
+K 10
+355a6d04bb
+V 21
+file 0-70.0.r70/21222
+K 10
+4632911829
+V 22
+file 0-10.0.r57/413300
+K 10
+46eec53bef
+V 21
+file 0-69.0.r69/13567
+K 10
+70dc968dc1
+V 22
+file 0-38.0.r60/964516
+K 10
+8a99024b80
+V 22
+file 0-31.0.r52/155313
+K 10
+9e373aecc0
+V 21
+file 0-64.0.r64/17225
+K 10
+a1d4cfb92b
+V 22
+file 0-29.0.r47/532913
+K 10
+a3d158beaf
+V 22
+file 3-1.0.r62/1817978
+K 10
+a83b3eb369
+V 19
+file 0-73.0.r73/706
+K 10
+cc91606ef2
+V 20
+file 0-32.0.r32/3439
+K 10
+e6d4f57509
+V 20
+file 0-71.0.r71/4494
+END
+ENDREP
+id: 0.0.r74/666
+type: dir
+pred: 0.0.r73/1592
+count: 74
+text: 74 0 653 0 dac4eabd7b0f461ce0a26b8049b1d1bd
+cpath: /
+copyroot: 0 /
+
+0-20.0.r63/382912 delete-file false false /ea9b8744a0
+
+
+666 795

@@ -1,0 +1,43 @@
+PLAIN
+K 10
+1bc99e3577
+V 21
+file 0-4.0.r12/353454
+K 10
+1e7fcf5512
+V 21
+file 0-22.0.r22/13348
+K 10
+4632911829
+V 20
+file 0-10.0.r10/1859
+K 10
+62f5ffb0ac
+V 21
+file 0-18.0.r21/74888
+K 10
+747dd46d30
+V 19
+file 0-7.0.r7/19388
+K 10
+a3d158beaf
+V 21
+file 3-1.0.r1/1747971
+K 10
+ea9b8744a0
+V 21
+file 0-20.0.r20/19509
+END
+ENDREP
+id: 0.0.r23/315
+type: dir
+pred: 0.0.r22/13888
+count: 23
+text: 23 0 302 0 55da4f0827ac6579725aa223849c14cf
+cpath: /
+copyroot: 0 /
+
+0-16.0.r17/3955678 delete-file false false /c303e7c8f9
+
+
+315 445

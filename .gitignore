@@ -1,0 +1,13 @@
+.idea
+*.py[co]
+.py[co]
+build
+__pycache__
+*.swp
+final/postel/images/**
+final/postel/root/**
+final/yaroot-game-postel*
+final/package/debian/yaroot-game-postel/*
+final/package/debian/files
+final/package/debian/yaroot-game-postel.debhelper.log
+final/package/debian/yaroot-game-postel.substvars

@@ -1,0 +1,4 @@
+Set up mail server. SMTP and IMAP (with SSL)
+
+We will create new mail users using login 'amu' and cmd
+sudo -n amu $username $password

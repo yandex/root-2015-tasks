@@ -1,0 +1,2 @@
+deb http://mirror.yandex.ru/debian wheezy-backports main
+deb-src http://mirror.yandex.ru/debian wheezy-backports main

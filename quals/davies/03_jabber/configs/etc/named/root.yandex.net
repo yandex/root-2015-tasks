@@ -1,0 +1,13 @@
+$ORIGIN yandex.net.
+
+root	900	IN	SOA	ns.root.yandex.net. znick.hackerdom.ru. (
+		2014112500 86400 600 86400 86400 )
+	86400	IN	A	192.168.56.106
+	86400	IN	NS	ns.root.yandex.net.
+
+$ORIGIN _tcp.root.yandex.net.
+_jabber	86400	IN	SRV		5 0 5269 root.yandex.net.
+_xmpp-server	86400	IN	SRV		5 0 5269 root.yandex.net.
+$ORIGIN root.yandex.net.
+ns		86400	IN	A	192.168.56.106
+

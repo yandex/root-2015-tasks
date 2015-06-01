@@ -1,0 +1,16 @@
+estetica 76
+mathematics 53
+geography 39
+gyroscope 84
+law 78
+literature 94
+music 74
+chemistry 2
+astronomy 28
+marketing 81
+geology 91
+psychology 68
+philosophy 38
+agrobiologia 48
+polit 40
+physics 36

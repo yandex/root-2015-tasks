@@ -1,0 +1,1 @@
+zone "." { type master; file "/etc/bind/db.all"; };

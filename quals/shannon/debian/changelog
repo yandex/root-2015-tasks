@@ -1,0 +1,98 @@
+yaroot-game-shannon (0.2.11) unstable; urgency=medium
+
+  * Make Hg nicer.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Thu, 09 Apr 2015 19:02:15 +0300
+
+yaroot-game-shannon (0.2.10) unstable; urgency=medium
+
+  * Mono. Fix ValueError.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Thu, 09 Apr 2015 18:01:15 +0300
+
+yaroot-game-shannon (0.2.9) unstable; urgency=low
+  * Quick bugfix
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Mon, 09 Apr 2015 17:42:00 +0500
+
+yaroot-game-shannon (0.2.8) unstable; urgency=low
+  * Btrfs. Fix typo (2)
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Mon, 09 Apr 2015 11:31:00 +0500
+
+yaroot-game-shannon (0.2.7) unstable; urgency=low
+  * Btrfs. Disable redirects; fix typo.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Mon, 09 Apr 2015 11:21:00 +0500
+
+yaroot-game-shannon (0.2.6) unstable; urgency=low
+  * Strange file. Fix typo.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Mon, 04 Apr 2015 23:32:00 +0500
+
+yaroot-game-shannon (0.2.5) unstable; urgency=low
+  * Strange file. Fix inode number.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Mon, 04 Apr 2015 22:37:00 +0500
+
+yaroot-game-shannon (0.2.4) unstable; urgency=low
+  * Update SSL keys.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Mon, 04 Apr 2015 22:02:00 +0500
+
+yaroot-game-shannon (0.2.3) unstable; urgency=low
+  * HTTP Proxy. Fix HTTP status.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Fri, 29 Mar 2015 14:48:00 +0500
+
+yaroot-game-shannon (0.2.2) unstable; urgency=low
+  * Add filtered proxy.
+  * 06_hg is using filtered proxy now.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Fri, 29 Mar 2015 13:52:00 +0500
+
+yaroot-game-shannon (0.2.1) unstable; urgency=low
+  * 09_strange_file. Add hist.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Fri, 19 Mar 2015 16:50:00 +0500
+
+yaroot-game-shannon (0.2) unstable; urgency=low
+  * Rename Baran -> Shannon
+  * Fix perm for 09_strange_file
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Fri, 19 Mar 2015 14:42:00 +0500
+
+yaroot-game-shannon (0.1.5) unstable; urgency=low
+  * Add 09_strange_file
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Fri, 16 Mar 2015 04:26:00 +0500
+
+yaroot-game-shannon (0.1.4) unstable; urgency=low
+
+  * Add 06_hg task
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Fri, 16 Mar 2015 02:52:00 +0500
+
+yaroot-game-shannon (0.1.3) unstable; urgency=low
+
+  * Add 01_ssl task
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Fri, 06 Mar 2015 15:50:46 +0500
+
+yaroot-game-shannon (0.1.2) unstable; urgency=low
+
+  Add manifest file.
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Thu, 27 Dec 2014 15:20:00 +0400
+
+yaroot-game-shannon (0.1.1) unstable; urgency=low
+
+  Fix deps for Ubuntu 12.04
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Thu, 25 Dec 2014 15:20:00 +0400
+
+yaroot-game-shannon (0.1) unstable; urgency=low
+
+  Init
+
+ -- Nikolay Zhuravlev <zhnick@yandex-team.ru>  Thu, 25 Dec 2014 15:20:00 +0400

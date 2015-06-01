@@ -1,0 +1,4 @@
+Some time ago there was a jabber server for root.yandex.net on the machine. Make it work again.
+
+You can find some usefull data in /var/lib/ejabberd.
+
