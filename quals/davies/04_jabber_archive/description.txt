@@ -1,1 +1,0 @@
-Make all the jabber messages dumped to http://ip/jabber_archive.txt (any text format)

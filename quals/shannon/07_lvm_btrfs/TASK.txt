@@ -1,1 +1,0 @@
-There is /root/file inside your image. Find good root.txt and make it aviable via http://image_ip/root.txt .

@@ -44,4 +44,7 @@ source "$(dirname "$0")/config.sh"
 
 install_pkgs
 setup_netflow
-setup_vbox_networking
+
+if [[ "$1" == "build" ]]; then
+    setup_vbox_networking
+fi

@@ -1,3 +1,0 @@
-You got daemons on ports 9001-9005.
-
-Set up balancer on port 9000 wich will be evenly balance connection to the daemons.

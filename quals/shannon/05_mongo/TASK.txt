@@ -1,3 +1,0 @@
-There is a database in /var/lib/db.tar.gz.
-
-Make collection root.features sharded on 2 database and make in aviable on standart port.

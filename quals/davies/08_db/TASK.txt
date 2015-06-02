@@ -1,3 +1,0 @@
-We got DB on port 5984. Unfortunately, one day the replication has been broken, and one client write some data to slave DB.
-
-This is very critiacal DB, so fix the replication, and save only the last version of each document.

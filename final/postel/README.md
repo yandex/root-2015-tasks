@@ -1,7 +1,107 @@
-## Overview
+### Overview
 
-This is a build and test system for Yandex.Root final game image called
-Postel. See https://root.yandex.com for details.
+This directory contains the tasks and infrastructure for final game called
+Postel. Every task has a checker in `tasks/$TASK/check.sh`.
+See [`README`](../../README.md) in project root for checker interface and
+general instructions.
+
+Also here is the build system used to build and test the final image, and
+solve scripts which prove solvability of the tasks. See "The build system"
+below.
+
+
+### Tasks
+
+1. [`Backup`](tasks/backup)
+Our old admin supported small site with some very useful texts.
+Unfortunately, he quit some time ago and we do not know how to restore the
+site. Please make it run again with the most recent data available.
+
+2. [`HTTPS MITM`](tasks/https_mitm)
+We continue with our Internet filtration topic. Now you need to set up HTTP
+proxy on port 3129 which will intercept all HTTPS traffic coming through and
+do it properly: we expect the proxied sites to provide valid certificates for
+their associated host-names. You may sign it with our own MITM certificate
+authority (the CA key and certificate are available in /root), we will use a
+client that trusts this CA. To additionally prove that you are ready to
+intercept traffic, please substitute the value for Server: header of all
+requests with the string "root.yandex.com".
+
+3. [`CI`](tasks/ci)
+We got a very old continuous integration system (on OpenIndiana) and we want
+to upgrade it. Please upgrade project serverMVC to use Docker.
+Out checker works with your repo at ssh://root@${YOUR_IP}/root/app.git
+and for start deploy checker will use url:
+http://${YOUR_IP}:8080/hudson/job/serverMVC_docker/build?delay=0sec
+Moreover, checker expects Docker running on ${YOUR_IP}.
+Our id_rsa.pub: `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDoGfF7Dvs5H0aeMsfm9MMasUWY12rdphM410FJdJaoAjGFA8X6PeKq06qEbZpbmXRs0Yfrcwn1hRONAQ5PLundgnI/oHxTIQUmj490jpXrKszvcgmynkrlFHjHvtfp4ViVOtfmt1byubG9BaFRJe+L3+l7MkAodYyrC93/jisk3xi/veAkuRFa4F7qUioBOuRYXEKSg4eF+tMouqbzKoM2O9vsAHrBRaIhV+yTiiDjN2UswzmQl4n4m/wRZ/OKISiewUzoBhf07431dutLi3Lpl5IdaNMiYdsi9D8Mgb7N2x4DKZKTXOVnHmMN79yL1u2WUlp3vhWAmz8Af4Sux7jh`
+
+4. [`netflow`](tasks/netflow)
+Set up a netflow receiver on port 9996 and make a traffic billing.
+For each user you should write bytes count and make it available via
+http://<your-ip>/billing.html which looks like:
+ ```
+ <tr>
+   <td>IP</td>
+   <td>bytes count</td>
+ </tr>
+ ```
+Update period: 1 minute.
+Sort: by bytes DESC
+
+5. [`Repo`](tasks/repo)
+We got a repository at /root/repo, but it doesn't work with youm < 3.0.0.
+Fix it and make available via http://<ip>/repo.
+
+6. [`Infected binary`](tasks/binary)
+Your image has been touched by a cracker who replaced one of standard system
+binaries with his own. We thought that the program contains some secret string
+and it will output it when properly executed. Please find that string.
+
+7. [`DNS MITM`](tasks/dns)
+Let's suppose you're an administrator of large corporate network. You have a
+list of hosts which should be blocked according to the company policy.
+You decide to set up your DNS server in such a way that it acts as normal
+DNS server for all the hosts except the ones from this list. For those hosts,
+it returns the address of itself to all A queries. Later you plan to set up
+a special web server that displays the page about your company Internet
+restrictions on the same machine. Now the task is to set up such DNS server.
+You should find the list of hosts in /root.
+
+8. [`SVN`](tasks/svn)
+You have svn repository in /root/repo. Delete (like svn rm) all files
+which are greater than 5MB in all revisions and make them available via
+svn://ip/ Big file should be deleted only in the revision when it became >5MB.
+
+9. [`NFS`](tasks/nfs)
+Make nfs://10.10.10.11/dir available as http://<yourip>/nfs. Use this
+credentials user@YA.ROOT:password. NFS server's host name is localhost.
+
+10. [`Nginx Lua`](tasks/nginx_lua)
+We have inherited from previous admin several modules for nginx, you can
+find it out at /etc/nginx/lua. No documentation, no examples of configuration
+files. But we have some examples, how web-server on port 8000 must work:
+  * /static/local/jquery.min.js should return content of file
+    /var/www/static/jquery.min.js
+  * /static/local/<size>/dog.png should return thumbnail of image
+    /var/www/static/dog.png, with width and height limit equals to X.
+    <size> is a verbal description of size ("small", "medium" and so on,
+    full list is unknown). We have values for X for different sizes:
+    50, 100, 500, 1000, 2000.
+  * All requests to /static/local/\* except requests for css- and js-
+    files, should return error 403 unless user has a special authorization
+    cookie.
+  * Request to /auth/local/jquery.min.js should set authorization cookie
+    with name "auth_local/jquery.min.js", which is accepted by
+    /static/local/jquery.min.js
+This list is not complete! But it's all we have.
+Don't forget to setup caching. It is said these modules support them.
+
+
+## The build system
+
+The final game has an automated build system which can produce and
+test the game image.
 
 The build system's goal is to enable developers to quickly reproduce the
 game image and to test their tasks prior to deploying them to the image
@@ -21,7 +121,7 @@ Every task consists of three parts:
 
 The tasks themselves are located in `tasks`. The scripts mentioned above
 have standard names and are located at
-`tasks/$task/{deploy,solve,check}.sh`, respectively.
+`tasks/$TASK/{deploy,solve,check}.sh`, respectively.
 
 
 The build system has several modes, of which two are the most important:
@@ -52,7 +152,8 @@ The build system has several modes, of which two are the most important:
     VM has zero boot count as there's no need to ever boot the image we
     release.
 
-## Doing it yourself
+
+## Building the image yourself
 
 To reproduce the build in the test mode, do the following:
 
@@ -77,8 +178,9 @@ To reproduce the build in the test mode, do the following:
 5. Edit `config.sh` according to your needs. The file contains inline
   comments for all the options. Please, do not forget this step as the
   build may not work properly or may not work at all if misconfigured.
-6. Run `prereqs.sh`. This installs the dependencies and configures your
-  VirtualBox host-only network interface.
+6. Run `prereqs.sh` with `build` as the first artument. This installs
+  the dependencies and configures your VirtualBox host-only network
+  interface.
 7. Finally, run `build.sh test`. This takes about 15 minutes on our
   environment and full set of tasks. You may wish to edit `tasks.lst`
   to retain only those tasks which you're interested in, or in case

@@ -1,4 +1,0 @@
-Same as task5, but SMTP and POP3 :)
-
-Additionaly, users should be aviable to recieve mail using "@login" address.
-

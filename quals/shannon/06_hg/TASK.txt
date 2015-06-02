@@ -1,3 +1,0 @@
-There is HG repository in /root/repo.
-
-Drop all .gz files in all revisions and make it aviable via http://ip:8000/
