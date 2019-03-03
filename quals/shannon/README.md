@@ -4,6 +4,10 @@ This directory contains the tasks for Shannon qualification game. Every task
 has a checker in `$TASK/checker.py`. See [`README`](../../README.md) in project
 root for checker interface and general instructions.
 
+### VirtualBox image
+
+[`Shannon_20150406.ova.zip`](http://download.cdn.yandex.net/root4/Shannon_20150406.ova.zip), key: 9af1565b9937f693ecefdaf5e90b2683
+
 ### Tasks
 
 1. [`SSL`](01_ssl)
