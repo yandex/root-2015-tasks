@@ -6,7 +6,7 @@ root for checker interface and general instructions.
 
 ### VirtualBox image
 
-[`postel_20150421.7z`](http://download.cdn.yandex.net/root4/postel_20150421.7z), key: 595379f6ca9765f3a1c13962289c0b17
+[`Shannon_20150406.ova.zip`](http://download.cdn.yandex.net/root4/Shannon_20150406.ova.zip), key: 9af1565b9937f693ecefdaf5e90b2683
 
 ### Tasks
 
