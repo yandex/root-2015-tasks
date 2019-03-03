@@ -31,7 +31,7 @@ the checker itself.
 
 If you wish to try yourself at solving the task, you may do the following:
 
-1. Download and decrypt the game image (see https://root.yandex.com/howto).
+1. Download and decrypt the game image (see https://academy.yandex.ru/events/system_administration/root-2015/ or README files in task dirs).
    Then import the image into VirtualBox and start it.
 2. Consider the description of task you want to solve, see README for the
    game you chose to play.

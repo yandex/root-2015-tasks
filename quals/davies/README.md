@@ -4,6 +4,10 @@ This directory contains the tasks for Davies qualification game. Every task
 has a checker in `$TASK/checker.py`. See [`README`](../../README.md) in project
 root for checker interface and general instructions.
 
+### VirtualBox image
+
+[`Davies_20150410.ova.zip`](http://download.cdn.yandex.net/root4/Davies_20150410.ova.zip), key: 585910abc08cf1a7eadf41fa6aff6b6f
+
 ### Tasks
 
 1. [`Echo`](01_sctp)
