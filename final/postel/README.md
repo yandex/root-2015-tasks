@@ -9,6 +9,9 @@ Also here is the build system used to build and test the final image, and
 solve scripts which prove solvability of the tasks. See "The build system"
 below.
 
+### VirtualBox image
+
+[`postel_20150421.7z`](http://download.cdn.yandex.net/root4/postel_20150421.7z), key: 595379f6ca9765f3a1c13962289c0b17
 
 ### Tasks
 
